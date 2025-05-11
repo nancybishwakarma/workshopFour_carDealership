@@ -22,6 +22,7 @@ public class Vehicle {
         this.price = price;
     }
 
+
     public int getVin() {
         return vin;
     }
@@ -86,8 +87,21 @@ public class Vehicle {
         this.price = price;
     }
 
+    @Override
+    public String toString() {
+        return String.format("%d, %d, %s, %s, %s, %s, %d, %.2f\n",
+                this.vin,
+                this.year,
+                this.make,
+                this.model,
+                this.type,
+                this.color,
+                this.odometer,
+                this.price
+                );
+    }
 
-
-
-
+    public static void vehicleCategories(){
+        System.out.println("Vin | Year | Make | Model | Type | Color | Odometer | Price");
+    }
 }

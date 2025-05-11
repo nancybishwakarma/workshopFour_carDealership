@@ -8,8 +8,9 @@ public class DealershipFileManager {
        try{
            BufferedReader bufferedReader = new BufferedReader(new FileReader("inventory.csv"));
 
-           String input = bufferedReader.readLine();
-           String[] dealershipDetails = input.split("\\|");
+           String input = bufferedReader.readLine(); //reads first line of the file
+
+           String[] dealershipDetails = input.split("\\|"); //splits dealership  data by |
            String name = dealershipDetails[0];
            String address = dealershipDetails[1];
            String phone = dealershipDetails[2];
@@ -18,7 +19,7 @@ public class DealershipFileManager {
 
            //handle all vehicles
            while((input = bufferedReader.readLine()) != null){
-               String[] vehicleDetails = input.split("\\|");
+               String[] vehicleDetails = input.split("\\|"); // splits actual data by |
 
                int vin = Integer.parseInt(vehicleDetails[0]);
                int year = Integer.parseInt(vehicleDetails[1]);
@@ -40,18 +41,17 @@ public class DealershipFileManager {
            e.printStackTrace();
            return null;
        }
-
-        return null;
     }
     public static void saveDealership(Dealership dealership){
 
         try{
             BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter("inventory.csv"));
 
-            String firstLine = String.format("%s|%s|%s\n"
-                    ,dealership.getName(),
+            String firstLine = String.format("%s|%s|%s\n",
+                    dealership.getName(),
                     dealership.getAddress(),
-                    dealership.getPhone());
+                    dealership.getPhone()
+            );
             bufferedWriter.write(firstLine);
 
             ArrayList<Vehicle> vehicles = dealership.getAllVehicles();
@@ -62,6 +62,7 @@ public class DealershipFileManager {
                         vehicle.getYear(),
                         vehicle.getMake(),
                         vehicle.getModel(),
+                        vehicle.getType(),
                         vehicle.getColor(),
                         vehicle.getOdometer(),
                         vehicle.getPrice()
