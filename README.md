@@ -57,3 +57,5 @@ ___________________________________________________
 _____________________________________________________
 ### Remove Vehicle
 ![removeVehicle.png](Screenshots/removeVehicle.png)
+### Exit Program
+![exit.png](Screenshots/exit.png)
