@@ -20,7 +20,9 @@ public class UserInterface {
     public void display() {
 
         //TODO: Create your main menu with do while
-        System.out.println("Welcome to the dealership program");
+        System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+        System.out.println("  Welcome to the dealership program");
+        System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
         int mainMenuCommand;
         do {
             System.out.println("1. Get by price");
@@ -33,7 +35,7 @@ public class UserInterface {
             System.out.println("8. Add vehicle");
             System.out.println("9. Remove vehicle");
             System.out.println("0. Exit");
-
+            System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
             System.out.println("Please enter a number");
             mainMenuCommand = scanner.nextInt();
 
@@ -91,6 +93,9 @@ public class UserInterface {
 
         ArrayList<Vehicle> filteredVehiclesPrice = dealership.vehiclesByPrice(min, max);
         displayVehicles(filteredVehiclesPrice);
+
+        System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+
     }
 
     private void processGetByMakeModelRequest() {
@@ -104,6 +109,9 @@ public class UserInterface {
         ArrayList<Vehicle> filteredVehiclesMakeModel = dealership.vehiclesByMakeModel(make, model);
         displayVehicles(filteredVehiclesMakeModel);
 
+        System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+
+
     }
 
     private void processGetByYearRequest() {
@@ -116,6 +124,9 @@ public class UserInterface {
 
         ArrayList<Vehicle> filteredVehiclesYear = dealership.vehiclesByYear(min, max);
         displayVehicles(filteredVehiclesYear);
+
+        System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+
     }
 
     private void processGetByColorRequest() {
@@ -126,6 +137,9 @@ public class UserInterface {
 
         ArrayList<Vehicle> filteredVehiclesColor = dealership.vehiclesByColor(color);
         displayVehicles(filteredVehiclesColor);
+
+        System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+
 
     }
 
@@ -138,6 +152,9 @@ public class UserInterface {
         int max = scanner.nextInt();
         ArrayList<Vehicle> filteredVehiclesMileage = dealership.vehiclesByMileage(min, max);
         displayVehicles(filteredVehiclesMileage);
+
+        System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+
     }
 
     private void processGetByVehicleTypeRequest() {
@@ -148,12 +165,19 @@ public class UserInterface {
 
         ArrayList<Vehicle> filteredVehiclesType = dealership.vehiclesByType(type);
         displayVehicles(filteredVehiclesType);
+
+        System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+
     }
 
     private void processGetAllVehicleRequest() {
 
         ArrayList<Vehicle> vehicles = dealership.getAllVehicles();
+        System.out.println("________________Displaying All Vehicles__________________");
         displayVehicles(vehicles);
+
+        System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+
     }
 
     private void processAddVehicleRequest() {
@@ -195,7 +219,10 @@ public class UserInterface {
         dealership.addVehicle(vehicle);
         DealershipFileManager.saveDealership(dealership);
 
+        System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
         System.out.println("You have added:\n" + vehicle);
+        System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+
     }
 
     private void processRemoveVehicleRequest() {
@@ -204,6 +231,10 @@ public class UserInterface {
 
         dealership.removeVehicle(vin);
         DealershipFileManager.saveDealership(dealership);
+
+
+        System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+
     }
 
 
@@ -212,6 +243,7 @@ public class UserInterface {
         for (Vehicle vehicle : vehicles) {
             System.out.print(vehicle);
         }
+
     }
 
 }

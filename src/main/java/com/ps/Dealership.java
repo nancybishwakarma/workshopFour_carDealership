@@ -103,6 +103,7 @@ public class Dealership {
         }
 
         return typeResult;
+
     }
 
     public ArrayList<Vehicle> getAllVehicles() {
