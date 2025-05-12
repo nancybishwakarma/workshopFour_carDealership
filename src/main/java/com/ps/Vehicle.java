@@ -98,10 +98,10 @@ public class Vehicle {
                 this.color,
                 this.odometer,
                 this.price
-                );
+        );
     }
 
-    public static void vehicleCategories(){
+    public static void vehicleCategories() {
         System.out.println("Vin | Year | Make | Model | Type | Color | Odometer | Price");
     }
 }
